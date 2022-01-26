@@ -27,7 +27,7 @@ function onClickImages(event) {
     return;
   }
   event.preventDefault();
-  //   console.dir(event.target);
+
   const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}">
 `);
