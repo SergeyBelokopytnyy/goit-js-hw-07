@@ -38,6 +38,7 @@ function onClickImages(event) {
 
   function onEscKeyPress(event) {
     if (event.code === "Escape") {
+      galleryEl.removeEventListener("keydown", onEscKeyPress);
       instance.close();
     }
   }

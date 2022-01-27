@@ -7,7 +7,7 @@ function createdGalery(galleryItems) {
   return galleryItems
     .map(({ description, original, preview }) => {
       return `<a class="gallery__item" href="${original}">
-  <img class="gallery__image" src="${preview}" alt="${description}" title="${description}"/>
+  <img class="gallery__image" src="${preview}" alt="${description}"/>
 </a>`;
     })
     .join("");
@@ -15,5 +15,7 @@ function createdGalery(galleryItems) {
 
 galleryEl.insertAdjacentHTML("beforeend", createdGalery(galleryItems));
 
-var lightbox = new SimpleLightbox(".gallery a", {});
-lightbox.defaultOptions.captionDelay = 250;
+var lightbox = new SimpleLightbox(".gallery a", {
+  captionDelay: 250,
+  captionsData: "alt",
+});
